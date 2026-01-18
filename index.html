@@ -37,6 +37,10 @@
                 <img src="./assets/search-icon.png" alt="Search" class="search-icon">
                 <button class="shop-btn">Shop Now</button>
             </div>
+
+            <button class="hamburger" aria-label="Open menu">
+                    &#9776;
+            </button>
         </nav>
 
 
@@ -72,22 +76,36 @@
 
             <!-- LEFT : GALLERY -->
             <div class="product-gallery">
-                <button class="arrow left" onclick="prevImage()">‹</button>
-                <img id="mainImage" src="./assets/p1.png" />
-                <button class="arrow right" onclick="nextImage()">›</button>
-
-                <div class="dots">
-                    <span onclick="setImage(0)"></span>
-                    <span onclick="setImage(1)"></span>
-                    <span onclick="setImage(2)"></span>
+            
+                <div class="main-image-wrapper">
+                    <button class="arrow left" onclick="prevImage()">&#8249;</button>
+            
+                    <img id="mainImage" src="./assets/original-img.png" alt="Product Image" />
+            
+                    <button class="arrow right" onclick="nextImage()">&#8250;</button>
+            
+                    <div class="dots">
+                        <span class="active" onclick="setImage(0)"></span>
+                        <span onclick="setImage(1)"></span>
+                        <span onclick="setImage(2)"></span>
+                        <span onclick="setImage(3)"></span>
+                        <span onclick="setImage(4)"></span>
+                    </div>
                 </div>
-
+            
                 <div class="thumbnails">
-                    <img src="./assets/p1.png" onclick="setImage(0)" />
-                    <img src="./assets/p2.png" onclick="setImage(1)" />
-                    <img src="./assets/p3.png" onclick="setImage(2)" />
+                    <img src="./assets/arose-perfume.png" onclick="setImage(1)" />
+                    <img src="./assets/scent.png" onclick="setImage(2)" />
+                    <img src="./assets/bella-perfume.png" onclick="setImage(3)" />
+                    <img src="./assets/daisies-perfume.png" onclick="setImage(4)" />
+                    <img src="./assets/arose-perfume.png" onclick="setImage(1)" />
+                    <img src="./assets/scent.png" onclick="setImage(2)" />
+                    <img src="./assets/bella-perfume.png" onclick="setImage(3)" />
+                    <img src="./assets/daisies-perfume.png" onclick="setImage(4)" />
                 </div>
+            
             </div>
+
 
             <!-- RIGHT : CONFIG -->
             <div class="product-config">
@@ -538,9 +556,9 @@
                     </ul>
 
                     <ul class="footer-social">
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>X</li>
+                        <li><img src="./assets/Facebook.png"/>Facebook</li>
+                        <li><img src="./assets/Instagram.png"/>Instagram</li>
+                        <li><img src="./assets/X.png"/>X</li>
                     </ul>
 
                     <div class="footer-newsletter">
@@ -560,13 +578,7 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
-
-
-
     <script src="./js/scripts.js"></script>
 </body>
 
