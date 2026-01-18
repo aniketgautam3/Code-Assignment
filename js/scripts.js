@@ -1,3 +1,4 @@
+//Add Cart Implementation
 const plans = {
   single: document.querySelector(".plan.single"),
   double: document.querySelector(".plan.double"),
@@ -128,7 +129,7 @@ const images = [
   "./assets/arose-perfume.png",
   "./assets/scent.png",
   "./assets/bella-perfume.png",
-  "./assets/daisies-perfume.png",
+  "/assets/daisies-perfume.png",
 ];
 
 let currentIndex = 0;
@@ -165,3 +166,18 @@ function setImage(index) {
   updateGallery(index);
 }
 
+// Toogle Sidebar Menu
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+  }
+
+  function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+  }
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    e.target.closest(".dropdown").classList.toggle("active");
+}
