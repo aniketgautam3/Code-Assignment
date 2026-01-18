@@ -9,13 +9,16 @@
 </head>
 
 <body>
+
+    <!-- Main Container-->
     <div class="container">
+
+        <!-- Navbar -->
         <nav class="navbar">
             <div class="company-name ">GTG</div>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-
                 <li class="dropdown">
                     <a href="javascript:void(0)">Shop ▾</a>
                     <ul class="dropdown-menu">
@@ -24,26 +27,48 @@
                         <li><a href="#gift-sets">Gift Sets</a></li>
                     </ul>
                 </li>
-
-
                 <li><a href="#fragrances">Fragrances</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-
             <div class="nav-actions">
                 <img src="./assets/search-icon.png" alt="Search" class="search-icon">
                 <button class="shop-btn">Shop Now</button>
             </div>
 
-            <button class="hamburger" aria-label="Open menu">
+            <button class="hamburger" onclick="openMenu()">
                     &#9776;
             </button>
         </nav>
 
+        <!-- Side Bar Menu -->
+        <div class="side-menu" id="sideMenu">
+            <button class="close-btn" onclick="closeMenu()">✕</button>
+        
+            <ul class="side-links">
+                <li><a href="#home">Home</a></li>
+        
+                <li class="dropdown">
+                    <a href="javascript:void(0)" onclick="toggleDropdown(event)">
+                        Shop ▾
+                    </a>
+                    <ul class="hamburger-dropdown-menu ">
+                        <li><a href="#perfumes">Perfumes</a></li>
+                        <li><a href="#deodorants">Deodorants</a></li>
+                        <li><a href="#gift-sets">Gift Sets</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="#fragrances">Fragrances</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
 
+       <!-- Landing Container -->
         <section class="landing-container">
             <div class="landing-container-left">
                 <span class="badge">
@@ -76,7 +101,7 @@
 
             <!-- LEFT : GALLERY -->
             <div class="product-gallery">
-            
+
                 <div class="main-image-wrapper">
                     <button class="arrow left" onclick="prevImage()">&#8249;</button>
             
