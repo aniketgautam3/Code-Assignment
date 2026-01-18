@@ -128,7 +128,7 @@ const images = [
   "./assets/arose-perfume.png",
   "./assets/scent.png",
   "./assets/bella-perfume.png",
-  "/assets/daisies-perfume.png",
+  "./assets/daisies-perfume.png",
 ];
 
 let currentIndex = 0;
