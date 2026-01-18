@@ -3,22 +3,52 @@ const plans = {
   double: document.querySelector(".plan.double"),
 };
 
-document.querySelectorAll('input[name="purchase"]').forEach((radio) => {
+document.querySelectorAll('input[name="purchase"]').forEach(radio => {
   radio.addEventListener("change", () => {
-    Object.values(plans).forEach((p) => p.classList.remove("active"));
-    plans[radio.value].classList.add("active");
+    syncPlanUI();
     updateCartLink();
   });
 });
 
-function updateCartLink() {
-  const purchase = document.querySelector(
-    'input[name="purchase"]:checked'
-  ).value;
-  document.getElementById(
-    "addToCart"
-  ).href = `https://example.com/cart?plan=${purchase}`;
+document
+  .querySelectorAll('input[type="radio"]')
+  .forEach(r => r.addEventListener("change", updateCartLink));
+
+function getSelected(name) {
+  return document.querySelector(`input[name="${name}"]:checked`)
+    ?.nextElementSibling?.textContent.trim();
 }
+
+function syncPlanUI() {
+  const checked = document.querySelector('input[name="purchase"]:checked');
+  if (!checked) return;
+
+  Object.values(plans).forEach(p => p.classList.remove("active"));
+  plans[checked.value].classList.add("active");
+}
+
+function updateCartLink() {
+  const plan = document.querySelector('input[name="purchase"]:checked')?.value;
+  if (!plan) return;
+
+  let url = `https://example.com/cart?plan=${plan}`;
+
+  if (plan === "single") {
+    url += `&fragrance=${getSelected("singleFragrance")}`;
+  } else {
+    url += `&fragrance1=${getSelected("doubleFragrance1")}`;
+    url += `&fragrance2=${getSelected("doubleFragrance2")}`;
+  }
+
+  document.getElementById("addToCart").href = url;
+}
+
+window.addEventListener("pageshow", () => {
+  syncPlanUI();
+  updateCartLink();
+});
+
+
 
 /* Delivery tabs */
 document.querySelectorAll(".delivery-tabs .tab").forEach((tab) => {
